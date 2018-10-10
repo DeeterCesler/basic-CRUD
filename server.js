@@ -6,8 +6,8 @@ const bodyParser = require('body-parser')
 const robotController = require("./controllers/robots")
 
 // middleware
-app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 app.use("/", robotController);
 

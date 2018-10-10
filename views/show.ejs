@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>here's your data, wee lad</h1>
+    <%= data.name %>
+    <% for(let key in data){ %>
+        <% if(key == "thoughts"){ %>
+            <a href="/<%=i%>/thoughts/">See <%= data.name %>'s thoughts.</a>
+        <% } else { %>
+            <p><%= key %> : <%= data[key] %></p>
+            <% } %>
+    <% } %>
+    <br>
+    <p><a href="/<%=i%>/hobbies/<%=i%>">View <%= data.name %>'s hobbies</a></p>
+    <br>
+    <a href="/<%=i%>/edit">edit</a>
+    <br>
+    <br>
+    <a href="/">go back</a>
+</body>
+</html>

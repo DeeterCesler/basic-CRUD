@@ -9,10 +9,12 @@
 <body>
     <h1>here's your data, wee lad</h1>
     <% for(let i=0; i<data.length; i++){ %>
-        <p><a href="/<%=i%>/edit"><%= data[i].name %></a></p>
+        <p><a href="/<%=i%>"><%= data[i].name %></a></p>
         <form action="/<%= i %>/delete?_method=DELETE" method="POST">
             <input type="submit" value="delete me">
         </form>
     <% } %>
+    <br>
+    <a href="/new">add a new item</a>
 </body>
 </html>

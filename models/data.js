@@ -2,7 +2,8 @@ const data = [
     {
         name: "your mum",
         age: Infinity,
-        location: "Denver"
+        location: "Denver",
+        thoughts: ["What's this all for?", "why is my husband dead", "I feel happy"]
     },
     {
         name: "your da",
