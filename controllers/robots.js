@@ -17,4 +17,16 @@ router.delete("/:id/delete", (req, res) => {
     res.redirect("/");
 })
 
+router.get("/:id/edit", (req, res) => {
+    res.render("edit.ejs", {
+        data: Data,
+        i: req.params.id
+    });
+})
+
+router.put("/:id/edit", (req, res) => {
+    Data[req.params.id] = req.body;
+    res.redirect("/");
+})
+
 module.exports = router;
