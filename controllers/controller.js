@@ -55,7 +55,7 @@ router.get("/:id", (req, res) => {
     res.render("show.ejs", {
         data: Data[req.params.id],
         i: req.params.id,
-        hobbies: Hobbies
+        random: Math.floor(Math.random()* Data[req.params.id].thoughts.length)
     });
 })
 
@@ -67,11 +67,25 @@ router.get("/:id/thoughts", (req, res) => {
     })
 })
 
+router.get("/:id/thoughts/new", (req, res) => {
+    res.render("newThought.ejs" , {
+        data: Data[req.params.id],
+        i: req.params.id
+    })
+})
+
+router.post("/:id/thoughts/new", (req, res) =>{
+    Data[req.params.id].thoughts.push(req.body.thot);
+    res.redirect("/")
+})
+
 router.get("/:id/thoughts/:index", (req, res) => {
     res.render("thoughts.ejs", {
         data: Data[req.params.id],
-        thoughtNumber: [req.params.index]
+        thoughtNumber: [req.params.index],
+        id: req.params.id
     })
 })
+
 
 module.exports = router;

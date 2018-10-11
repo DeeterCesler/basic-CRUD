@@ -7,11 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/<%= i %>/new" method="POST">
-        Name: <input type="text" name="name"><br>
-        Age: <input type="text" name="age"><br>
-        Location: <input type="text" name="location"><br>
-        Random thought: <input type="text" name="thoughts">
+    <h2>create your new thought for <%=data.name%></h2>
+    <form action="/<%=i%>/thoughts/new" method="POST">
+        <input type="text" name="thot">
         <input type="submit">
     </form>
 </body>

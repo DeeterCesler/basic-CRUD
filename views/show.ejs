@@ -11,13 +11,13 @@
     <%= data.name %>
     <% for(let key in data){ %>
         <% if(key == "thoughts"){ %>
-            <a href="/<%=i%>/thoughts/">See <%= data.name %>'s thoughts.</a>
+            
         <% } else { %>
             <p><%= key %> : <%= data[key] %></p>
             <% } %>
     <% } %>
     <br>
-    <p><a href="/<%=i%>/hobbies/<%=i%>">View <%= data.name %>'s hobbies</a></p>
+    <p><a href="/<%=i%>/thoughts/<%=random%>">See a random thought from <%= data.name %></a></p>
     <br>
     <a href="/<%=i%>/edit">edit</a>
     <br>
